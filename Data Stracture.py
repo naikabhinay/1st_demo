@@ -24,6 +24,7 @@ print(str1*2)
 print(str1+str2)
 
 
+
 #List
 1=[1,"hi",'hello',23.45]
 print(1[3:])

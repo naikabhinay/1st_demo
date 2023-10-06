@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep 18 12:15:19 2023
+
+@author: ADMIN
+"""
+
+# Apply family of funcions
+
+#pipe()= Table wise function Application
+#it perform the custom operation for the entire dataframe.
+
+# apply(): ROw or Column wise function application.
+# it perform the custom operation on either row wise or column wise.
+
+import pandas as pd
+def adder(adder1,adder2):return adder1+adder2
+d={'socre_math':([66,75,64,57,98,76,45,43,78]),
+   'Score_science':([67,87,98,78,87,65,67,54,67])}
+
+print(type(d))
+print(d)
+d1=pd.DataFrame(d)
+print(d1)
+print(d1.pipe(adder, 2))
+
+
+# APPLY ()
+import numpy as np
+d={'socre_math':pd.Series([66,75,64,57,98,76,45,43,78]),
+   'Score_science':pd.Series([67,87,98,78,87,65,67,54,67])}
+
+print(type(d))
+print(d)
+d1=np.DataFrame(d)
+print(d1)
+print(d1.apply(np.mean, axis=0))
+
+# applymap function element wise function application.
+# it perform specified operations on all the element of the dataframe.
+
+
+d={'socre_math':pd.Series([66,75,64,57,98,76,45,43,78]),
+   'Score_science':pd.Series([67,87,98,78,87,65,67,54,67])}
+d1=pd.DataFrame(d)
+print(d1)
+
+#ex 1
+print(d1.applymap(lambda x:x*2))
+
+#ex 2
+import math as m
+print(d1.applymap(lambda x:m.sqrt(x)))
+
